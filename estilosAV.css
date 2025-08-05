@@ -585,6 +585,12 @@ footer p {
   display: none;
 }
 
+.direccion {
+  font-weight: bold;
+  color: #5e961f !important;
+}
+
+
 /* Media queries para móviles */
 @media (max-width: 768px) {
 
