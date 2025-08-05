@@ -269,4 +269,4 @@ window.goToNext = goToNext
 window.goToPrevious = goToPrevious
 
 const form = document.getElementById('miFormulario');
-form.action = "https://formsubmit.co/cosmemori@gmail.com";
+form.action = "https://formsubmit.co/info@abrevilma.com";

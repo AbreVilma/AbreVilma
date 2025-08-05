@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Abre Vilma | Gracias</title>
+    <link rel="icon" href="/img/logoAV.jpg" type="image/jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="description" content="Gracias por contactar con Abre Vilma. Te contactaremos en breve para tu vestido de novia a medida.">
+    <link rel="stylesheet" href="/estilosAV.css" />
+    <style>
+        .thank-you-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            min-height: 70vh;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .thank-you-section h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 300;
+            color: #5a8d24;
+            margin-bottom: 20px;
+        }
+
+        .thank-you-section p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: #4a4a4a;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        .thank-you-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .thank-you-links a {
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .thank-you-links a.website-link {
+            background: linear-gradient(135deg, #5a8d24, #6ba529);
+            color: white;
+        }
+
+        .thank-you-links a.website-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(90, 141, 36, 0.4);
+        }
+        
+        .thank-you-links a.instagram-link {
+            background: linear-gradient(135deg, #E4405F, #F77737);
+            color: white;
+        }
+
+        .thank-you-links a.instagram-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(228, 64, 95, 0.4);
+        }
+
+        .thank-you-section .logo-container img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 30px;
+            animation: bounceIn 1s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            80% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Abre Vilma</h1>
+    <p>Vestidos de Novias a Medida e Invitadas ✨</p>
+</header>
+
+<nav>
+    <div class="nav-logo show">
+        <img src="/img/logoAV.jpg" alt="AbreVilma Logo" />
+        <span class="nav-logo-text">Abre Vilma</span>
+    </div>
+    <a href="/index.html#galeria">Creaciones</a>
+    <a href="/index.html#historia">Nuestra Historia</a>
+    <a href="/index.html#contacto">Contacto</a>
+</nav>
+
+<section class="thank-you-section">
+    <div class="logo-container">
+        <img src="/img/logoAV.jpg" alt="AbreVilma Logo">
+    </div>
+    <h2>¡Gracias por contactarnos!</h2>
+    <p>Hemos recibido tu mensaje y nos pondremos en contacto contigo lo antes posible para comenzar a hacer realidad el vestido de tus sueños. Mientras tanto, te invitamos a explorar nuestras últimas creaciones en las redes sociales.</p>
+    <div class="thank-you-links">
+        <a href="https://instagram.com/abre_vilma" target="_blank" class="instagram-link">
+            <i class="fab fa-instagram"></i> Ver en Instagram
+        </a>
+        <a href="/index.html" class="website-link">Volver a la Web</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 AbreVilma - Todos los derechos reservados | Diseño y creación de vestidos de novia a medida en Madrid</p>
+</footer>
+
+<script src="/av.js" defer></script>
+
+</body>
+</html>
