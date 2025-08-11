@@ -267,6 +267,3 @@ document.addEventListener('DOMContentLoaded', () => {
 // Exponer funciones globalmente si es necesario
 window.goToNext = goToNext
 window.goToPrevious = goToPrevious
-
-const form = document.getElementById('miFormulario');
-form.action = "https://formsubmit.co/info@abrevilma.com";

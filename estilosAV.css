@@ -184,7 +184,7 @@ section p {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background: linear-gradient(135deg, #ffffff 0%, #e9ecef 100%);
+  background: linear-gradient(180deg, #ffffff 30%, #f3f3f3 50%);
 }
 
 .carousel {
@@ -288,19 +288,19 @@ section p {
 /* Enlaces sociales elegantes */
 .social-links {
   text-align: center;
-  margin: 50px 0;
-  padding: 30px;
+  margin: auto;
+  margin-top: 100px;
+  padding: 45px;
+  max-width: 500px;
   background: white;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .social-links p {
-  margin-bottom: 20px;
   font-size: clamp(1rem, 2.2vw, 1.2rem);
   color: #4a4a4a;
 }
-
 
 .social-links a {
   display: inline-block;
@@ -324,44 +324,46 @@ section p {
 }
 
 /* Sección Historia mejorada */
-#historia {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+.hist-content {
+  max-width: 1200px;     /* igual ancho máximo */
+  padding: 40px;         /* espacio interno igual */
+  margin: 0 auto;
+  text-align: center;
   border-radius: 20px;
-  margin: 40px 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #f8f8f8 0%, #e2e4e6 100%);
   position: relative;
+  overflow: hidden;
 }
 
-#historia::before {
+.hist-content::before {
   content: '"';
   position: absolute;
   top: 20px;
   left: 30px;
   font-size: 80px;
-  color: rgba(90, 141, 36, 0.1);
+  color: rgba(90, 141, 36, 0.132);
   font-family: serif;
   line-height: 1;
 }
 
-/* Sección Contacto premium */
-#contacto {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-  margin: 40px 20px;
-  padding: 60px 40px;
+.hist-content p{
+  text-align: justify;
 }
 
+/* Sección Contacto premium */
 .contact-appointment {
-  background: #639e21;
+  margin: 40px auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(155deg, #a7d277 0%, #70a830 100%);
   color: white;
   padding: 40px;
-  border-radius: 20px;
   margin-bottom: 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
-
 
 .contact-appointment h3 {
   font-size: clamp(1.5rem, 3.5vw, 2rem);
@@ -371,7 +373,7 @@ section p {
   z-index: 1;
   font-weight: 300;
 }
-
+  
 .contact-appointment p {
   font-size: clamp(1rem, 2.2vw, 1.2rem);
   margin-bottom: 15px;
@@ -379,14 +381,16 @@ section p {
   color: white;
   z-index: 1;
   opacity: 0.95;
+  text-align: justify;
 }
 
 .contact-info {
-  background: rgba(255, 255, 255, 0.155);
+  background: rgba(255, 255, 255, 0.158);
   padding: 25px;
   border-radius: 15px;
   text-align: center;
-  margin: 0 10px;
+  max-width: 800px;
+  margin: auto;
   z-index: 1;
 }
 
@@ -394,74 +398,33 @@ section p {
   font-size: clamp(0.95rem, 2.2vw, 1.1rem);
 }
 
-.contact-form-section {
-  background: #f8f9fa;
-  padding: 40px;
-  border-radius: 20px;
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
 }
 
-.contact-form-section h3 {
-  color: #5a8d24;
-  font-size: clamp(1.5rem, 3.5vw, 2rem);
-  margin-bottom: 20px;
-  text-align: center;
-  font-weight: 300;
+.contact-item span{
+  text-align: justify;
 }
 
-.contact-form-section p {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #666;
-  font-size: clamp(1rem, 2.2vw, 1.1rem);
+.contact-item svg {
+  flex-shrink: 0;
 }
 
-/* Formulario elegante */
-form {
-  display: grid;
-  gap: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-input, textarea {
-  padding: 18px 20px;
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
-  border: 2px solid #e9ecef;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  background: white;
-  font-family: inherit;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-  border-color: #5a8d24;
-  box-shadow: 0 0 0 3px rgba(90, 141, 36, 0.1);
-  transform: translateY(-1px);
-}
-
-button {
-  background: linear-gradient(135deg, #6eb023, #86ca39);
+.contact-item a {
   color: white;
-  border: none;
-  padding: 18px 30px;
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  cursor: pointer;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  box-shadow: 0 5px 15px rgba(90, 141, 36, 0.3);
+  text-decoration: none;
+  font-weight: 500;
 }
 
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(90, 141, 36, 0.4);
+.contact-item a:hover {
+  text-decoration: underline;
 }
 
-button:active {
-  transform: translateY(0);
+.contact-item a:active {
+  color: #124907;
 }
 
 /* Sección mapa */
@@ -486,9 +449,10 @@ button:active {
 
 .map-container {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 0;
   padding-bottom: 56.25%;
+  margin: 0 auto;
   margin-top: 20px;
   border-radius: 15px;
   overflow: hidden;
@@ -590,6 +554,15 @@ footer p {
   color: #5e961f !important;
 }
 
+.logoAV {
+  width: 20vw;
+  height: 20vw;
+  max-width: 20vh;
+  max-height: 20vh;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.521);
+}
+
 
 /* Media queries para móviles */
 @media (max-width: 768px) {
@@ -644,16 +617,8 @@ footer p {
     margin: 0 10px;
   }
 
-  #contacto {
+  #hist-content, #contact-appointment {
     margin: 20px 10px;
-    padding: 40px 20px;
-  }
-
-  .contact-appointment {
-    padding: 30px 20px;
-  }
-
-  .contact-form-section {
     padding: 30px 20px;
   }
 }
@@ -674,7 +639,7 @@ footer p {
     padding: 30px 10px;
   }
 
-  #contacto {
+   #hist-content, #contact-appointment {
     padding: 30px 15px;
   }
 }

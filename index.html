@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abre Vilma | Madrid</title>
   <link rel="icon" href="img/logoAV.jpg" type="image/jpg">
-  <meta name="description" content="Atelier especializado en vestidos de novia a medida e invitadas en Madrid. Diseños únicos y exclusivos con la máxima calidad y atención personalizada.">
+  <meta name="description" content="Especializado en vestidos de novia a medida e invitadas. Diseños únicos y exclusivos con la máxima calidad y atención personalizada.">
   <link rel="stylesheet" href="estilosAV.css" />
 	<script src="av.js" defer></script>
 </head>
 <body>
 
 <header>
-  <h1>Abre Vilma</h1>
+  <img src="img/logoAV.jpg" alt="AbreVilma" class="logoAV" />
+  <!-- <h1>Abre Vilma</h1> -->
   <p>Vestidos a medida para novias e invitadas</p>
 </header>
 
@@ -33,7 +34,7 @@
   <!-- Menú de pestañas -->
   <div class="tab-menu">
     <button class="tab-button active" data-tab="novias">Novias</button>
-    <button class="tab-button" data-tab="madrinas">Madrinas</button>
+    <button class="tab-button" data-tab="madrinas">Madrinas & Madres</button>
     <button class="tab-button" data-tab="invitadas">Invitadas</button>
   </div>
   
@@ -255,51 +256,54 @@
 </section>
 
 <section id="historia">
-  <h2>Nuestra Historia</h2>
-  <p>AbreVilma nació del sueño y la pasión por transformar momentos especiales en recuerdos eternos. Con más de una década de experiencia en alta costura, nuestro atelier se ha consolidado como referente en la creación de vestidos de novia a medida y piezas exclusivas para invitadas.</p>
-  <p>Cada diseño refleja nuestra filosofía: combinar la elegancia clásica con toques contemporáneos, utilizando únicamente materiales de la más alta calidad y técnicas artesanales que han sido perfeccionadas durante años de dedicación.</p>
-  <p>En AbreVilma, no solo creamos vestidos; creamos la expresión perfecta de tu personalidad y estilo, acompañándote en cada paso del proceso para garantizar que el día más importante de tu vida sea absolutamente perfecto.</p>
+  <div class="hist-content">
+    <h2>Nuestra Historia</h2>
+    <p>AbreVilma nació del sueño y la pasión por transformar momentos especiales en recuerdos eternos. Con más de una década de experiencia en alta costura, nuestro atelier se ha consolidado como referente en la creación de vestidos de novia a medida y piezas exclusivas para invitadas.</p>
+    <p>Cada diseño refleja nuestra filosofía: combinar la elegancia clásica con toques contemporáneos, utilizando únicamente materiales de la más alta calidad y técnicas artesanales que han sido perfeccionadas durante años de dedicación.</p>
+    <p>En AbreVilma, no solo creamos vestidos; creamos la expresión perfecta de tu personalidad y estilo, acompañándote en cada paso del proceso para garantizar que el día más importante de tu vida sea absolutamente perfecto.</p>
+  </div>
 </section>
 
 <section id="contacto">
-  <h2>Contacto</h2>
   
-  <!-- Información de cita previa -->
-  <div class="contact-appointment">
-    <h3>Reserva tu Cita Personalizada</h3>
-    <p>Trabajamos exclusivamente con cita previa para brindarte la atención personalizada que mereces. Nuestro equipo de expertas te asesorará en cada detalle para crear el vestido de tus sueños.</p>
-    <div class="contact-info">
-      <p>📞 <strong>Teléfono:</strong> <a href="tel:682450484" style="color: white; text-decoration: none; font-weight: bold;">682 450 484</a></p>
-      <p>📍 <strong>Ubicación:</strong> Avenida del Ventisquero de la Condesa, 13 Local 26 - Madrid</p>
-      <p>🕐 <strong>Horario:</strong> Lunes a Viernes de 10:00 a 19:00h | Sábados de 10:00 a 14:00h</p>
-      <p>✨ <strong>Consulta inicial gratuita</strong> - Incluye asesoramiento personalizado y toma de medidas</p>
+  <h2>Contacto</h2>
+    <div class="contact-appointment">
+      <h3>Reserva tu cita personalizada</h3>
+      <p>Trabajamos exclusivamente con <strong>cita previa</strong> para brindarte la <strong>atención personalizada</strong> que mereces. Nuestro equipo de expertas te asesorará en cada detalle para crear el vestido de tus sueños.</p>
+
+      <div class="contact-info">
+        <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M6.62 10.79a15.093 15.093 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24c1.12.37 2.33.57 3.54.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10.07 22 2 13.93 2 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.21.2 2.42.57 3.54a1 1 0 0 1-.24 1.05l-2.21 2.2z"/></svg>
+            <span><a href="tel:682450484"><strong>Teléfono:</strong> 682 450 484</a></span>
+        </div>
+
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v16l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>
+          <span><a href="https://wa.me/682450484"><strong>WhatsApp:</strong> 682 450 484</a></span>
+        </div>
+
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+          <span><strong>Ubicación:</strong> Avenida del Ventisquero de la Condesa, 13 Local 26 - Madrid</span>
+        </div>
+
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-14a6 6 0 0 1 6 6c0 1.1-.3 2.1-.8 3l-4.9-4.9V6h-1v5l5.6 5.6A6 6 0 0 1 12 20z"/></svg>
+          <span><strong>Horario:</strong> Lunes a Viernes de 10:00 a 19:00h | Sábados de 10:00 a 14:00h</span>
+        </div>
+
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M20 6H4V4h16v2zM4 8h16v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2z"/></svg>
+          <span><strong>Consulta inicial gratuita</strong> – Incluye asesoramiento personalizado y toma de medidas</span>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- Formulario de contacto -->
-  <div class="contact-form-section">
-    <h3>Cuéntanos tu Visión</h3>
-    <p>¿Tienes una idea en mente? ¿Buscas inspiración para tu gran día? Comparte con nosotras tus sueños y preferencias. Nos encanta conocer cada detalle de tu historia para crear algo verdaderamente único.</p>
-    
-    <form id="miFormulario" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre completo" required />
-      <input type="tel" name="telefono" placeholder="Tu número de teléfono" required/>
-      <input type="email" name="email" placeholder="Tu correo electrónico" />
-      <textarea name="mensaje" placeholder="Cuéntanos sobre tu evento..." rows="4" required></textarea>
-      <button type="submit">Enviar Consulta</button>
-
-        <!-- Opcional: Redirigir a una página de gracias -->
-      <input type="hidden" name="_next" value="https://abrevilma.github.io/abrevilma/gracias.html">
-
-      <input type="hidden" name="_captcha" value="false">
-    </form>
-
-  </div>
 
   <!-- Mapa -->
   <div class="map-section">
     <h3>📍 Visita Nuestro Showroom</h3>
-    <p>Te esperamos en nuestro elegante showroom en Madrid, un espacio diseñado para inspirarte y donde podrás vivir una experiencia única.</p>
+    <p>Te esperamos en nuestro elegante showroom en Madrid, un espacio diseñado para inspirarte y donde podrás vivir una experiencia única con atención personalizada.</p>
     <p class="direccion">Avenida del Ventisquero de la Condesa, 13, Local 26 - Madrid</p>
 
     <div class="map-container">
