@@ -567,6 +567,10 @@ footer p {
 /* Media queries para móviles */
 @media (max-width: 768px) {
 
+  .contact-info {
+    margin: auto -10px;
+  }
+
   .nav-logo {
     display: none;
   }
@@ -649,6 +653,11 @@ footer p {
    #hist-content, #contact-appointment {
     padding: 30px 15px;
   }
+
+  .contact-info {
+    margin: auto -15px;
+  }
+
 }
 
 /* Animaciones de entrada */
