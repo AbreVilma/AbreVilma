@@ -621,6 +621,13 @@ footer p {
     margin: 20px 10px;
     padding: 30px 20px;
   }
+
+  .logoAV {
+    width: 30vw;
+    height: 30vw;
+    max-width: 30vh;
+    max-height: 30vh;
+  }
 }
 
 @media (max-width: 480px) {
