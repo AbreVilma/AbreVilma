@@ -24,7 +24,7 @@ header {
   position: relative;
 }
 
-.logoCabecera{
+.logoAV{
   width: 30vw;
   height: 15vw;
 }
@@ -533,16 +533,6 @@ footer p {
   color: #5d6829 !important;
 }
 
-.logoAV {
-  width: 20vw;
-  height: 20vw;
-  max-width: 20vh;
-  max-height: 20vh;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.521);
-}
-
-
 /* Media queries para móviles */
 @media (max-width: 768px) {
 
@@ -606,10 +596,8 @@ footer p {
   }
 
   .logoAV {
-    width: 30vw;
-    height: 30vw;
-    max-width: 30vh;
-    max-height: 30vh;
+    width: 40vw;
+    height: 20vw;
   }
 
   .social-links {
@@ -639,6 +627,11 @@ footer p {
 
   .contact-info {
     margin: auto -25px;
+  }
+
+  .logoAV {
+    width: 50vw;
+    height: 25vw;
   }
 
 }
