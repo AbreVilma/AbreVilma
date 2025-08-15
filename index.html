@@ -6,316 +6,307 @@
   <title>Abre Vilma | Madrid</title>
   <link rel="icon" href="img/logoAVcuadrado.jpg" type="image/jpg">
   <meta name="description" content="Especializado en vestidos de novia a medida e invitadas. Diseños únicos y exclusivos con la máxima calidad y atención personalizada.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilosAV.css" />
-	<script src="av.js" defer></script>
 </head>
 <body>
 
-<header>
+<!-- Header with Logo Initially, then Navigation after scroll -->
+<header class="header" id="header">
+  <!-- Logo inicial (visible al principio) -->
   <img src="img/logoAV.jpg" alt="AbreVilma" class="logoAV" />
+  
+  <!-- Navegación (visible después del scroll) -->
+  <div class="nav-container" id="navContainer">
+    <img src="img/logoAV.jpg" alt="AbreVilma" class="logo" />
+    
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </header>
 
-<nav>
-  <div class="nav-logo">
-    <img src="img/logoAVcuadrado.jpg" alt="AbreVilma Logo" />
-    <span class="nav-logo-text">Abre Vilma</span>
-  </div>
+<!-- Spacer para cuando el header se vuelve fixed -->
+<div class="header-spacer" id="headerSpacer"></div>
+
+<!-- Mobile Menu -->
+<nav class="mobile-menu" id="mobileMenu">
   <a href="#galeria">Creaciones</a>
-  <a href="#historia">Nuestra Historia</a>
+  <a href="#historia">Historia</a>
   <a href="#contacto">Contacto</a>
 </nav>
 
-<section id="galeria" class="gallery">
-  <h2>Nuestras Creaciones</h2>
-  <p>Cada vestido es una obra de arte única, diseñada exclusivamente para realzar tu belleza natural y hacer de tu día especial un momento inolvidable.</p>
-  
-  <!-- Menú de pestañas -->
-  <div class="tab-menu">
-    <button class="tab-button active" data-tab="novias">Novias</button>
-    <button class="tab-button" data-tab="madrinas">Madrinas & Madres</button>
-    <button class="tab-button" data-tab="invitadas">Invitadas</button>
-  </div>
-  
-  <div class="carousel-global">
+<section class="carousel-section" id="galeria">
+  <div class="section">
+    <h2>Nuestras Creaciones</h2>
 
-    <!-- Carrusel Novias -->
-    <div class="carousel" id="carousel-novias">
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <!-- <div class="title">Belleza Sublime</div> -->
-          <img src="img/novias/novia1.jpg" alt="Diseño hermoso" />
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Belleza Sublime</div>
-          <img src="https://media.istockphoto.com/id/1191376167/it/foto/villa-dellisola.jpg?s=612x612&w=0&k=20&c=PKslWo4FdbjinohKQlK_oWL34jqAsnzMTdy2bxEAf-I=" alt="Diseño hermoso" />
-        </div>
-      </div>
-
-            <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Belleza Sublime</div>
-          <img src="https://media.istockphoto.com/id/1191376167/it/foto/villa-dellisola.jpg?s=612x612&w=0&k=20&c=PKslWo4FdbjinohKQlK_oWL34jqAsnzMTdy2bxEAf-I=" alt="Diseño hermoso" />
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Belleza Sublime</div>
-          <img src="https://media.istockphoto.com/id/1191376167/it/foto/villa-dellisola.jpg?s=612x612&w=0&k=20&c=PKslWo4FdbjinohKQlK_oWL34jqAsnzMTdy2bxEAf-I=" alt="Diseño hermoso" />
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Belleza Sublime</div>
-          <img src="https://media.istockphoto.com/id/1191376167/it/foto/villa-dellisola.jpg?s=612x612&w=0&k=20&c=PKslWo4FdbjinohKQlK_oWL34jqAsnzMTdy2bxEAf-I=" alt="Diseño hermoso" />
-        </div>
-      </div>
-
-            <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Belleza Sublime</div>
-          <img src="https://media.istockphoto.com/id/1191376167/it/foto/villa-dellisola.jpg?s=612x612&w=0&k=20&c=PKslWo4FdbjinohKQlK_oWL34jqAsnzMTdy2bxEAf-I=" alt="Diseño hermoso" />
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Belleza Sublime</div>
-          <img src="https://media.istockphoto.com/id/1191376167/it/foto/villa-dellisola.jpg?s=612x612&w=0&k=20&c=PKslWo4FdbjinohKQlK_oWL34jqAsnzMTdy2bxEAf-I=" alt="Diseño hermoso" />
-        </div>
-      </div>
-
-            <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Belleza Sublime</div>
-          <img src="https://media.istockphoto.com/id/1191376167/it/foto/villa-dellisola.jpg?s=612x612&w=0&k=20&c=PKslWo4FdbjinohKQlK_oWL34jqAsnzMTdy2bxEAf-I=" alt="Diseño hermoso" />
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Belleza Sublime</div>
-          <img src="https://media.istockphoto.com/id/1191376167/it/foto/villa-dellisola.jpg?s=612x612&w=0&k=20&c=PKslWo4FdbjinohKQlK_oWL34jqAsnzMTdy2bxEAf-I=" alt="Diseño hermoso" />
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Belleza Sublime</div>
-          <img src="https://media.istockphoto.com/id/1191376167/it/foto/villa-dellisola.jpg?s=612x612&w=0&k=20&c=PKslWo4FdbjinohKQlK_oWL34jqAsnzMTdy2bxEAf-I=" alt="Diseño hermoso" />
-        </div>
-      </div>
-
+    <!-- Botones de categoría -->
+    <div class="tab-menu">
+      <button class="tab-button active" data-category="novias">Novias</button>
+      <button class="tab-button" data-category="madrinas">Madrinas</button>
+      <button class="tab-button" data-category="invitadas">Invitadas</button>
     </div>
 
-    <!-- Carrusel Madrinas -->
-    <div class="carousel hidden" id="carousel-madrinas">
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Elegancia Atemporal</div>
-          <img src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&w=0&k=20&c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g=" alt="Diseño elegante" />
+    <div class="carousel-container" id="carouselContainer">
+    <div class="carousel-track" id="carouselTrack">
         </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Elegancia Atemporal</div>
-          <img src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&w=0&k=20&c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g=" alt="Diseño elegante" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Elegancia Atemporal</div>
-          <img src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&w=0&k=20&c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g=" alt="Diseño elegante" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Elegancia Atemporal</div>
-          <img src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&w=0&k=20&c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g=" alt="Diseño elegante" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Elegancia Atemporal</div>
-          <img src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&w=0&k=20&c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g=" alt="Diseño elegante" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Elegancia Atemporal</div>
-          <img src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&w=0&k=20&c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g=" alt="Diseño elegante" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Elegancia Atemporal</div>
-          <img src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&w=0&k=20&c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g=" alt="Diseño elegante" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Elegancia Atemporal</div>
-          <img src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&w=0&k=20&c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g=" alt="Diseño elegante" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Elegancia Atemporal</div>
-          <img src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&w=0&k=20&c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g=" alt="Diseño elegante" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Elegancia Atemporal</div>
-          <img src="https://media.istockphoto.com/id/949299844/it/foto/vista-prospettica-dellesterno-delledificio-contemporaneo.jpg?s=612x612&w=0&k=20&c=_DR1aRHuTEV3EYBJo1ZXq1pF4SgwB9EVWQLaBj4sC5g=" alt="Diseño elegante" />
-        </div>
-      </div>
-      
     </div>
-
-    <!-- Carrusel Invitadas -->
-    <div class="carousel hidden" id="carousel-invitadas">
-
-
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Vanguardia Única</div>
-          <img src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&w=0&k=20&c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I=" alt="Diseño moderno" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Vanguardia Única</div>
-          <img src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&w=0&k=20&c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I=" alt="Diseño moderno" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Vanguardia Única</div>
-          <img src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&w=0&k=20&c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I=" alt="Diseño moderno" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Vanguardia Única</div>
-          <img src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&w=0&k=20&c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I=" alt="Diseño moderno" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Vanguardia Única</div>
-          <img src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&w=0&k=20&c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I=" alt="Diseño moderno" />
-        </div>
-      </div>                  
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Vanguardia Única</div>
-          <img src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&w=0&k=20&c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I=" alt="Diseño moderno" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Vanguardia Única</div>
-          <img src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&w=0&k=20&c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I=" alt="Diseño moderno" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Vanguardia Única</div>
-          <img src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&w=0&k=20&c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I=" alt="Diseño moderno" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Vanguardia Única</div>
-          <img src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&w=0&k=20&c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I=" alt="Diseño moderno" />
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="carousel-box">
-          <div class="title">Vanguardia Única</div>
-          <img src="https://media.istockphoto.com/id/1214351345/it/foto/guardando-direttamente-lo-skyline-del-quartiere-finanziario-nel-centro-di-londra-immagine-di.jpg?s=612x612&w=0&k=20&c=oNNbPzPvcQ-4RA6AeatNIxHQIafBiXmDRtUUY0Ska-I=" alt="Diseño moderno" />
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
-  <div class="social-links">
-    <p>Síguenos para ver nuestras últimas creaciones:</p>
-    <a href="https://instagram.com/abre_vilma" target="_blank" aria-label="Seguir en Instagram">
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z'/%3E%3C/svg%3E" alt="Instagram AbreVilma" />
-    </a>
   </div>
 </section>
 
-<section id="historia">
-  <div class="hist-content">
-    <h2>Nuestra Historia</h2>
+<!-- Historia Section -->
+<section class="section" id="historia">
+  <h2>Nuestra Historia</h2>
+  <div class="historia-content">
     <p>AbreVilma nació del sueño y la pasión por transformar momentos especiales en recuerdos eternos. Con más de una década de experiencia en alta costura, nuestro atelier se ha consolidado como referente en la creación de vestidos de novia a medida y piezas exclusivas para invitadas.</p>
+    
     <p>Cada diseño refleja nuestra filosofía: combinar la elegancia clásica con toques contemporáneos, utilizando únicamente materiales de la más alta calidad y técnicas artesanales que han sido perfeccionadas durante años de dedicación.</p>
+    
     <p>En AbreVilma, no solo creamos vestidos; creamos la expresión perfecta de tu personalidad y estilo, acompañándote en cada paso del proceso para garantizar que el día más importante de tu vida sea absolutamente perfecto.</p>
   </div>
 </section>
 
-<section id="contacto">
-  
-  <h2>Contacto</h2>
-    <div class="contact-appointment">
-      <h3>Reserva tu cita personalizada</h3>
-      <p>Trabajamos exclusivamente con <strong>cita previa</strong> para brindarte la <strong>atención personalizada</strong> que mereces. Nuestro equipo de expertas te asesorará en cada detalle para crear el vestido de tus sueños.</p>
-
+<!-- Contact Section -->
+<section class="contact-section" id="contacto">
+  <div class="section">
+    <h2>Contacto</h2>
+    <div class="contact-grid">
       <div class="contact-info">
+        <h3>Reserva tu cita personalizada</h3>
+        <p>Trabajamos exclusivamente con cita previa para brindarte la atención personalizada que mereces.</p>
+        
         <div class="contact-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M6.62 10.79a15.093 15.093 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24c1.12.37 2.33.57 3.54.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10.07 22 2 13.93 2 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.21.2 2.42.57 3.54a1 1 0 0 1-.24 1.05l-2.21 2.2z"/></svg>
-            <span><a href="tel:682450484"><strong>Teléfono:</strong> 682 450 484</a></span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+            <path d="M6.62 10.79a15.093 15.093 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24c1.12.37 2.33.57 3.54.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10.07 22 2 13.93 2 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.21.2 2.42.57 3.54a1 1 0 0 1-.24 1.05l-2.21 2.2z"/>
+          </svg>
+          <span><a href="tel:682450484"><strong>Teléfono:</strong> 682 450 484</a></span>
         </div>
 
         <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v16l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+            <path d="M20 2H4a2 2 0 0 0-2 2v16l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/>
+          </svg>
           <span><a href="https://wa.me/682450484"><strong>WhatsApp:</strong> 682 450 484</a></span>
         </div>
 
         <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-          <span><strong>Ubicación:</strong> Avenida del Ventisquero de la Condesa, 13 Local 26 - Madrid</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          </svg>
+          <span><strong>Dirección:</strong> Avenida del Ventisquero de la Condesa, 13 Local 26 - Madrid</span>
         </div>
 
         <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-14a6 6 0 0 1 6 6c0 1.1-.3 2.1-.8 3l-4.9-4.9V6h-1v5l5.6 5.6A6 6 0 0 1 12 20z"/></svg>
-          <span><strong>Horario:</strong> Lunes a Viernes de 10:00 a 19:00h | Sábados de 10:00 a 14:00h</span>
-        </div>
-
-        <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M20 6H4V4h16v2zM4 8h16v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2z"/></svg>
-          <span><strong>Consulta inicial gratuita</strong> – Incluye asesoramiento personalizado y toma de medidas</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+            <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-14a6 6 0 0 1 6 6c0 1.1-.3 2.1-.8 3l-4.9-4.9V6h-1v5l5.6 5.6A6 6 0 0 1 12 20z"/>
+          </svg>
+          <span><strong>Horario:</strong> Lun-Vie 10:00-20:00h</span>
         </div>
       </div>
-    </div>
-
-
-  <!-- Mapa -->
-  <div class="map-section">
-    <h3>📍 Visita Nuestro Showroom</h3>
-    <p>Te esperamos en nuestro elegante showroom en Madrid, un espacio diseñado para inspirarte y donde podrás vivir una experiencia única con atención personalizada.</p>
-    <p class="direccion">Avenida del Ventisquero de la Condesa, 13, Local 26 - Madrid</p>
-
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.455007176015!2d-3.721378380035727!3d40.487320422996945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42298e95b1be95%3A0xefeae4a0906da7ae!2sAv.%20del%20Ventisquero%20de%20la%20Condesa%2C%2013%2C%2028035%20Madrid!5e0!3m2!1ses!2ses!4v1673180272459!5m2!1ses!2ses" 
-        allowfullscreen 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade" 
-        title="Ubicación AbreVilma Madrid">
-      </iframe>
+      
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.455007176015!2d-3.721378380035727!3d40.487320422996945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42298e95b1be95%3A0xefeae4a0906da7ae!2sAv.%20del%20Ventisquero%20de%20la%20Condesa%2C%2013%2C%2028035%20Madrid!5e0!3m2!1ses!2ses!4v1673180272459!5m2!1ses!2ses" 
+          allowfullscreen 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade" 
+          title="Ubicación AbreVilma Madrid">
+        </iframe>
+      </div>
     </div>
   </div>
 </section>
 
-
-<footer>
+<!-- Footer -->
+<footer class="footer">
   <p>&copy; 2025 AbreVilma - Todos los derechos reservados | Diseño y creación de vestidos de novia a medida.</p>
 </footer>
+
+<script>
+// ===== HAMBURGER MENU =====
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+});
+
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  });
+});
+
+// ===== SMOOTH SCROLLING =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      const header = document.querySelector('.header');
+      const headerHeight = header.classList.contains('scrolled') ? header.offsetHeight : 0;
+      const targetPosition = target.offsetTop - headerHeight;
+      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    }
+  });
+});
+
+// ===== HEADER SCROLL TRANSITION =====
+const header = document.getElementById('header');
+const headerSpacer = document.getElementById('headerSpacer');
+let hasScrolled = false;
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  if (scrollY > 100 && !hasScrolled) {
+    header.classList.add('scrolled');
+    headerSpacer.classList.add('active');
+    hasScrolled = true;
+  } else if (scrollY <= 100 && hasScrolled) {
+    header.classList.remove('scrolled');
+    headerSpacer.classList.remove('active');
+    hasScrolled = false;
+  }
+});
+
+// ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Setup animations for sections
+  document.querySelectorAll('.section').forEach(section => {
+    if (!section.classList.contains('carousel-section')) {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(50px)';
+      section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      observer.observe(section);
+    }
+  });
+
+  // ===== NUEVA LÓGICA DEL CARRUSEL DESLIZABLE =====
+  const categories = {
+    novias: ["img/novias/1.jpg", "img/novias/2.jpg", "img/novias/3.jpg", "img/novias/4.jpg", "img/novias/5.jpg", "img/novias/6.jpg", "img/novias/7.jpg", "img/novias/8.jpg", "img/novias/9.jpg", "img/novias/10.jpg", "img/novias/11.jpg", "img/novias/12.jpg", "img/novias/13.jpg", "img/novias/14.jpg", "img/novias/15.jpg", "img/novias/16.jpg", "img/novias/17.jpg", "img/novias/18.jpg", "img/novias/19.jpg", "img/novias/20.jpg", "img/novias/21.jpg", "img/novias/22.jpg", "img/novias/23.jpg", "img/novias/24.jpg", "img/novias/25.jpg", "img/novias/26.jpg", "img/novias/27.jpg", "img/novias/28.jpg"],
+    madrinas: ["img/madrina1.jpg", "img/madrina2.jpg", "img/madrina3.jpg", "img/madrina4.jpg"],
+    invitadas: ["img/invitada1.jpg", "img/invitada2.jpg", "img/invitada3.jpg", "img/invitada4.jpg"]
+  };
+
+  let currentCategory = "novias";
+  let currentIndex = 0;
+  let isDragging = false;
+  let startPosY = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+
+  const tabs = document.querySelectorAll(".tab-button");
+  const carouselContainer = document.getElementById("carouselContainer");
+  const carouselTrack = document.getElementById("carouselTrack");
+
+  function loadCategoryImages(category) {
+    carouselTrack.innerHTML = '';
+    const images = categories[category];
+    images.forEach(src => {
+      const slide = document.createElement('div');
+      slide.classList.add('carousel-slide');
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = category.slice(0, -1); // 'novias' -> 'novia'
+      slide.appendChild(img);
+      carouselTrack.appendChild(slide);
+    });
+  }
+
+  function setPositionByIndex() {
+    currentTranslate = currentIndex * -carouselContainer.clientHeight;
+    prevTranslate = currentTranslate;
+    carouselTrack.style.transform = `translateY(${currentTranslate}px)`;
+  }
+  
+  function animation() {
+    carouselTrack.style.transform = `translateY(${currentTranslate}px)`;
+    if(isDragging) requestAnimationFrame(animation);
+  }
+
+  function getPosition(event) {
+    return event.type.includes('mouse') ? event.pageY : event.touches[0].clientY;
+  }
+
+  function touchStart(event) {
+    isDragging = true;
+    startPosY = getPosition(event);
+    carouselTrack.style.transition = 'none'; // Desactiva la transición mientras se arrastra
+    requestAnimationFrame(animation);
+  }
+
+  function touchMove(event) {
+    if (isDragging) {
+      const currentPosition = getPosition(event);
+      currentTranslate = prevTranslate + currentPosition - startPosY;
+    }
+  }
+
+  function touchEnd() {
+    isDragging = false;
+    const movedBy = currentTranslate - prevTranslate;
+
+    // Lógica para cambiar de slide si el deslizamiento es suficiente
+    if (movedBy < -100 && currentIndex < categories[currentCategory].length - 1) {
+      currentIndex += 1;
+    }
+    if (movedBy > 100 && currentIndex > 0) {
+      currentIndex -= 1;
+    }
+    
+    carouselTrack.style.transition = 'transform 0.5s ease-out'; // Reactiva la transición
+    setPositionByIndex();
+  }
+
+  // Event Listeners para el arrastre
+  carouselContainer.addEventListener("mousedown", touchStart);
+  carouselContainer.addEventListener("touchstart", touchStart, { passive: true });
+
+  window.addEventListener("mouseup", touchEnd);
+  window.addEventListener("touchend", touchEnd);
+
+  window.addEventListener("mousemove", touchMove);
+  window.addEventListener("touchmove", touchMove);
+  
+  // Event Listeners para los botones de categoría
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      currentCategory = tab.dataset.category;
+      currentIndex = 0;
+      loadCategoryImages(currentCategory);
+      setPositionByIndex();
+    });
+  });
+
+  // Carga inicial
+  loadCategoryImages(currentCategory);
+  setTimeout(() => setPositionByIndex(), 100); // Pequeño delay para asegurar que el alto es correcto
+  window.addEventListener('resize', setPositionByIndex); // Reajusta en cambio de tamaño
+});
+</script>
+
+</body>
+</html>
