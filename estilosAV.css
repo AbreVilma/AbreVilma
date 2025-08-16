@@ -40,7 +40,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgb(255, 255, 255);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px var(--shadow);
   z-index: 1000;
@@ -124,7 +124,7 @@ body {
   right: -100%;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+  background: linear-gradient(135deg, #6c7838ec, #5e6829e8);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -375,6 +375,7 @@ body {
   margin-bottom: 25px;
   position: relative;
   z-index: 1;
+  text-align: justify;
 }
 
 /* ===== CONTACT SECTION ===== */
@@ -399,6 +400,9 @@ body {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin-bottom: 30px;
   font-weight: 300;
+}
+.contact-info p {
+  text-align: justify;
 }
 
 .contact-item {
@@ -472,22 +476,22 @@ body {
   }
 
   .tab-button {
-    padding: 10px 15px;
+    padding: 20px 20px;
     font-size: clamp(0.7rem, 3vw, 0.9rem);
     min-width: 80px;
     letter-spacing: 0.5px;
   }
 
-.carousel-wrapper {
-    flex-direction: column;
-    gap: 15px;
-}
+  .carousel-wrapper {
+      flex-direction: column;
+      gap: 15px;
+  }
 
-.carousel-container {
-    height: 60vh;
-    max-width: 300px;
-    margin: 0 20px;
-}
+  .carousel-container {
+      height: 60vh;
+      max-width: 300px;
+      margin: 0 20px;
+  }
 
   .logoAV {
     width: 50vw;
@@ -531,13 +535,13 @@ body {
 
   .tab-menu {
     margin: 0 5px 30px;
-    padding: 4px;
+    padding: 5px;
     gap: 3px;
     border-radius: 15px;
   }
 
   .tab-button {
-    padding: 8px 12px;
+    padding: 12px 12px;
     font-size: 0.75rem;
     min-width: auto;
     width: 100%;
