@@ -43,10 +43,33 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// ===== CAROUSEL FUNCTIONALITY CON CARGA AUTOMÁTICA =====
-document.addEventListener("DOMContentLoaded", async () => {
-  // Variables globales
-  let categories = {};
+// ===== CAROUSEL FUNCTIONALITY OPTIMIZADO =====
+document.addEventListener("DOMContentLoaded", () => {
+  // 🚀 CONFIGURACIÓN RÁPIDA: Solo cambia estos números cuando agregues/quites imágenes
+  const categories = {
+    novias: 28,    // Cambia este número cuando agregues/quites imágenes
+    madrinas: 18,  // Cambia este número cuando agregues/quites imágenes  
+    invitadas: 18  // Cambia este número cuando agregues/quites imágenes
+  };
+
+  // 🎯 CONFIGURACIÓN DE NOMBRES: Define los patrones de nombres de tus imágenes
+  const imagePatterns = {
+    novias: {
+      // Patrón: nombre base + número + extensión
+      pattern: 'img/novias/{index}.jpg',
+      // Si tus imágenes tienen nombres diferentes, usa un array:
+      // customNames: ['novia1.jpg', 'vestido-blanco.png', 'bride-photo.webp']
+    },
+    madrinas: {
+      pattern: 'img/madrinas/{index}.jpg',
+      // customNames: ['madrina_1.jpg', 'madrina_2.png', 'bridesmaid.webp']
+    },
+    invitadas: {
+      pattern: 'img/invitadas/{index}.jpg',
+      // customNames: ['invitada-1.jpg', 'guest-dress.png', 'formal.webp']
+    }
+  };
+
   let currentCategory = "novias";
   let currentIndex = 0;
   let isDragging = false;
@@ -61,132 +84,48 @@ document.addEventListener("DOMContentLoaded", async () => {
   const arrowUp = document.getElementById("arrowUp");
   const arrowDown = document.getElementById("arrowDown");
 
-  // Función para cargar la configuración de imágenes automáticamente
-  async function loadImageConfig() {
-    try {
-      const response = await fetch('get_images.php');
-      if (!response.ok) {
-        throw new Error('No se pudo cargar la configuración de imágenes');
-      }
-      
-      const data = await response.json();
-      
-      // Convertir la estructura de datos
-      categories = {};
-      for (const [category, info] of Object.entries(data)) {
-        categories[category] = {
-          count: info.count,
-          images: info.images
-        };
-      }
-      
-      console.log('Configuración de imágenes cargada:', categories);
-      return true;
-    } catch (error) {
-      console.error('Error cargando imágenes:', error);
-      
-      // Fallback: intentar método de detección por intentos
-      console.log('Usando método de detección por intentos...');
-      return await loadImagesByDetection();
-    }
-  }
-
-  // Método alternativo: detección por intentos (menos eficiente pero funciona sin PHP)
-  async function loadImagesByDetection() {
-    const categoryNames = ['novias', 'madrinas', 'invitadas'];
-    const extensions = ['jpg', 'jpeg', 'png', 'webp'];
-    
-    categories = {};
-    
-    for (const category of categoryNames) {
-      categories[category] = {
-        count: 0,
-        images: []
-      };
-      
-      let imageIndex = 1;
-      let consecutiveFailures = 0;
-      const maxConsecutiveFailures = 5; // Si fallan 5 seguidas, parar
-      
-      while (consecutiveFailures < maxConsecutiveFailures) {
-        let imageFound = false;
-        
-        // Intentar diferentes extensiones
-        for (const ext of extensions) {
-          const imagePath = `img/${category}/${imageIndex}.${ext}`;
-          
-          try {
-            const imageExists = await checkImageExists(imagePath);
-            if (imageExists) {
-              categories[category].images.push(`${imageIndex}.${ext}`);
-              categories[category].count++;
-              imageFound = true;
-              consecutiveFailures = 0;
-              break;
-            }
-          } catch (e) {
-            // Continuar con la siguiente extensión
-          }
-        }
-        
-        if (!imageFound) {
-          consecutiveFailures++;
-        }
-        
-        imageIndex++;
-        
-        // Límite de seguridad para evitar bucles infinitos
-        if (imageIndex > 200) break;
-      }
-      
-      console.log(`${category}: ${categories[category].count} imágenes encontradas`);
-    }
-    
-    return Object.keys(categories).length > 0;
-  }
-
-  // Función para verificar si una imagen existe
-  function checkImageExists(imagePath) {
-    return new Promise((resolve) => {
-      const img = new Image();
-      img.onload = () => resolve(true);
-      img.onerror = () => resolve(false);
-      img.src = imagePath;
-      
-      // Timeout después de 2 segundos
-      setTimeout(() => resolve(false), 2000);
-    });
-  }
-
-  // Función para cargar imágenes dinámicamente
+  // 🚀 Función de carga súper rápida
   function loadCategoryImages(category) {
     carouselTrack.innerHTML = '';
     
-    if (!categories[category] || categories[category].count === 0) {
-      console.warn(`No se encontraron imágenes para la categoría: ${category}`);
+    if (!categories[category]) {
+      console.warn(`Categoría no encontrada: ${category}`);
       return;
     }
     
-    const categoryData = categories[category];
+    const imageCount = categories[category];
+    const pattern = imagePatterns[category];
     
-    categoryData.images.forEach((imageName, index) => {
+    for (let i = 1; i <= imageCount; i++) {
       const slide = document.createElement('div');
       slide.classList.add('carousel-slide');
       
       const img = document.createElement('img');
-      img.src = `img/${category}/${imageName}`;
-      img.alt = `${category.slice(0, -1)} ${index + 1}`;
-      img.loading = index <= 3 ? 'eager' : 'lazy';
       
-      // Manejo de errores de carga de imagen
+      // Usar nombres personalizados si están definidos, sino usar el patrón
+      if (pattern.customNames && pattern.customNames[i-1]) {
+        img.src = `img/${category}/${pattern.customNames[i-1]}`;
+      } else {
+        img.src = pattern.pattern.replace('{index}', i);
+      }
+      
+      img.alt = `${category.slice(0, -1)} ${i}`;
+      img.loading = i <= 3 ? 'eager' : 'lazy'; // Carga rápida para las primeras 3
+      
+      // Manejo de errores más silencioso
       img.onerror = function() {
-        console.warn(`No se pudo cargar: img/${category}/${imageName}`);
-        this.style.display = 'none';
+        console.warn(`Imagen no encontrada: ${this.src}`);
+        // En lugar de ocultar, mostrar placeholder
+        this.style.backgroundColor = '#f0f0f0';
+        this.style.display = 'flex';
+        this.style.alignItems = 'center';
+        this.style.justifyContent = 'center';
+        this.innerHTML = '📷';
       };
       
       slide.appendChild(img);
       carouselTrack.appendChild(slide);
-    });
+    }
   }
 
   // Nueva función para asegurar que las slides tengan la altura correcta
@@ -209,19 +148,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Función para actualizar el estado de las flechas
   function updateArrows() {
-    if (arrowUp && arrowDown && categories[currentCategory]) {
+    if (arrowUp && arrowDown) {
       arrowUp.disabled = currentIndex === 0;
-      arrowDown.disabled = currentIndex === categories[currentCategory].count - 1;
-    }
-  }
-
-  // Función para actualizar dots (si existe)
-  function updateDots() {
-    const dots = document.querySelectorAll('.dot');
-    if (dots.length > 0) {
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
-      });
+      arrowDown.disabled = currentIndex === categories[currentCategory] - 1;
     }
   }
 
@@ -230,16 +159,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (currentIndex > 0) {
       currentIndex -= 1;
       setPositionByIndex();
-      updateDots();
       updateArrows();
     }
   }
 
   function goToNext() {
-    if (categories[currentCategory] && currentIndex < categories[currentCategory].count - 1) {
+    if (currentIndex < categories[currentCategory] - 1) {
       currentIndex += 1;
       setPositionByIndex();
-      updateDots();
       updateArrows();
     }
   }
@@ -248,7 +175,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   function goToSlide(index) {
     currentIndex = index;
     setPositionByIndex();
-    updateDots();
     updateArrows();
   }
 
@@ -304,7 +230,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const containerHeight = carouselContainer.clientHeight;
     const threshold = containerHeight * 0.15;
 
-    if (movedBy < -threshold && categories[currentCategory] && currentIndex < categories[currentCategory].count - 1) {
+    if (movedBy < -threshold && currentIndex < categories[currentCategory] - 1) {
       currentIndex += 1;
     }
     else if (movedBy > threshold && currentIndex > 0) {
@@ -313,7 +239,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     carouselTrack.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)';
     setPositionByIndex();
-    updateDots();
     updateArrows();
   }
 
@@ -344,25 +269,20 @@ document.addEventListener("DOMContentLoaded", async () => {
       setTimeout(() => {
         updateSlideHeights();
         setPositionByIndex();
-        updateDots();
         updateArrows();
-      }, 100);
+      }, 50); // Reducido de 100ms a 50ms para mayor velocidad
     });
   });
 
   // Navegación con teclado
   document.addEventListener('keydown', (e) => {
-    if (!categories[currentCategory]) return;
-    
-    if (e.key === 'ArrowDown' && currentIndex < categories[currentCategory].count - 1) {
+    if (e.key === 'ArrowDown' && currentIndex < categories[currentCategory] - 1) {
       currentIndex += 1;
       setPositionByIndex();
-      updateDots();
       updateArrows();
     } else if (e.key === 'ArrowUp' && currentIndex > 0) {
       currentIndex -= 1;
       setPositionByIndex();
-      updateDots();
       updateArrows();
     }
   });
@@ -370,28 +290,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Event listener para redimensionamiento
   window.addEventListener('resize', handleResize);
 
-  // ===== INICIALIZACIÓN =====
+  // ===== INICIALIZACIÓN SÚPER RÁPIDA =====
   
-  // Mostrar loading mientras se cargan las imágenes
-  if (carouselTrack) {
-    carouselTrack.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#666;">Cargando imágenes...</div>';
-  }
-  
-  // Cargar configuración y inicializar
-  const configLoaded = await loadImageConfig();
-  
-  if (configLoaded && categories[currentCategory]) {
-    loadCategoryImages(currentCategory);
-    setTimeout(() => {
-      updateSlideHeights();
-      setPositionByIndex();
-      updateDots();
-      updateArrows();
-    }, 150);
-  } else {
-    console.error('No se pudieron cargar las imágenes');
-    if (carouselTrack) {
-      carouselTrack.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#ff6b6b;">Error: No se pudieron cargar las imágenes</div>';
-    }
-  }
+  // Carga inicial inmediata
+  loadCategoryImages(currentCategory);
+  setTimeout(() => {
+    updateSlideHeights();
+    setPositionByIndex();
+    updateArrows();
+  }, 100);
 });
