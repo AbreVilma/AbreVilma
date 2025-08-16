@@ -302,7 +302,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.4);
   border: none;
   border-radius: 50%;
   width: 40px;
@@ -319,7 +319,7 @@ body {
 
 .carousel-arrow:hover {
   opacity: 1;
-  background: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.8);
   transform: translateX(-50%) scale(1.1);
 }
 
@@ -344,7 +344,47 @@ body {
 
 .carousel-arrow:disabled:hover {
   transform: translateX(-50%) scale(1);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ===== INSTAGRAM ===== */
+.social-links {
+  text-align: center;
+  margin: auto;
+  margin-top: 40px;
+  padding: 45px;
+  max-width: 500px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.social-links p {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: #4a4a4a;
+}
+
+.social-links a {
+  margin-top: 10px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  padding: 8px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+  box-shadow: 0 5px 15px var(--shadow);
+}
+
+.social-links a:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(108, 120, 56, 0.4);
+}
+
+.social-links img {
+  height: auto;
+  width: auto;
+  filter: brightness(0) invert(1);
+  vertical-align: middle;
 }
 
 /* ===== HISTORIA SECTION ===== */
