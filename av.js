@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentTranslate = 0;
   let prevTranslate = 0;
   let animationFrame = 0;
+  let isTransitioning = false; // Nueva variable para controlar las transiciones laterales
 
   const tabs = document.querySelectorAll(".tab-button");
   const carouselContainer = document.getElementById("carouselContainer");
@@ -178,6 +179,56 @@ document.addEventListener("DOMContentLoaded", () => {
     updateArrows();
   }
 
+  // NUEVA FUNCIÓN: Transición lateral entre categorías
+  function switchCategoryWithTransition(newCategory) {
+    if (isTransitioning || newCategory === currentCategory) return;
+    
+    isTransitioning = true;
+    
+    // Determinar dirección de la animación
+    const categoryOrder = ['novias', 'madrinas', 'invitadas'];
+    const currentCategoryIndex = categoryOrder.indexOf(currentCategory);
+    const newCategoryIndex = categoryOrder.indexOf(newCategory);
+    const moveRight = newCategoryIndex > currentCategoryIndex;
+    
+    // Fase 1: Slide out (deslizar hacia fuera)
+    carouselTrack.style.transition = 'transform 0.3s ease-in-out';
+    carouselTrack.style.transform = moveRight ? 'translateX(-100%)' : 'translateX(100%)';
+    
+    // Fase 2: Cambiar contenido y slide in (después de 300ms)
+    setTimeout(() => {
+      // Cambiar categoría y resetear índice
+      currentCategory = newCategory;
+      currentIndex = 0;
+      
+      // Cargar nuevas imágenes
+      loadCategoryImages(currentCategory);
+      
+      // Posicionar el track fuera de la vista en el lado opuesto
+      carouselTrack.style.transition = 'none';
+      carouselTrack.style.transform = moveRight ? 'translateX(100%)' : 'translateX(-100%)';
+      
+      // Actualizar alturas después de cargar imágenes
+      setTimeout(() => {
+        updateSlideHeights();
+        
+        // Fase 3: Slide in (deslizar hacia dentro)
+        setTimeout(() => {
+          carouselTrack.style.transition = 'transform 0.3s ease-in-out';
+          carouselTrack.style.transform = 'translateX(0)';
+          
+          // Fase 4: Después de que termine la animación horizontal, aplicar posición vertical
+          setTimeout(() => {
+            carouselTrack.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)';
+            setPositionByIndex();
+            updateArrows();
+            isTransitioning = false;
+          }, 300);
+        }, 50);
+      }, 50);
+    }, 300);
+  }
+
   // Manejar redimensionamiento de ventana
   function handleResize() {
     setTimeout(() => {
@@ -200,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function touchStart(event) {
-    if (event.target.closest('.carousel-arrow')) {
+    if (event.target.closest('.carousel-arrow') || isTransitioning) {
       return;
     }
 
@@ -213,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function touchMove(event) {
-    if (isDragging) {
+    if (isDragging && !isTransitioning) {
       event.preventDefault();
       const currentPosition = getPosition(event);
       currentTranslate = prevTranslate + currentPosition - startPosY;
@@ -221,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function touchEnd() {
-    if (!isDragging) return;
+    if (!isDragging || isTransitioning) return;
     
     isDragging = false;
     cancelAnimationFrame(animationFrame);
@@ -258,24 +309,28 @@ document.addEventListener("DOMContentLoaded", () => {
     arrowDown.addEventListener("click", goToNext);
   }
 
-  // Event Listeners para los botones de categoría
+  // MODIFICADO: Event Listeners para los botones de categoría con transición lateral
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
+      if (isTransitioning) return; // Prevenir clics múltiples durante transición
+      
+      const newCategory = tab.dataset.category;
+      
+      // Actualizar estado visual de botones
       tabs.forEach(t => t.classList.remove("active"));
       tab.classList.add("active");
-      currentCategory = tab.dataset.category;
-      currentIndex = 0;
-      loadCategoryImages(currentCategory);
-      setTimeout(() => {
-        updateSlideHeights();
-        setPositionByIndex();
-        updateArrows();
-      }, 50); // Reducido de 100ms a 50ms para mayor velocidad
+      
+      // Usar transición lateral si es diferente categoría
+      if (newCategory !== currentCategory) {
+        switchCategoryWithTransition(newCategory);
+      }
     });
   });
 
   // Navegación con teclado
   document.addEventListener('keydown', (e) => {
+    if (isTransitioning) return;
+    
     if (e.key === 'ArrowDown' && currentIndex < categories[currentCategory] - 1) {
       currentIndex += 1;
       setPositionByIndex();

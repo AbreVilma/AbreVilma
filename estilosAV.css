@@ -250,13 +250,11 @@ body {
   align-items: center;
   gap: 20px;
 }
-
 .carousel-container {
   height: 80vh;
-  /* Cambio principal: usar aspect-ratio en lugar de width basado en vh */
   aspect-ratio: 3/4;
   max-width: 450px;
-  max-height: 600px; /* Límite máximo para pantallas muy grandes */
+  max-height: 600px;
   position: relative;
   overflow: hidden;
   cursor: grab;
@@ -273,8 +271,10 @@ body {
 
 .carousel-track {
   height: 100%;
+  width: 100%; /* Asegurar que el track tenga el ancho completo */
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   will-change: transform;
+  position: relative; /* Importante para el posicionamiento */
 }
 
 .carousel-slide {
@@ -371,8 +371,21 @@ body {
   transition: transform 0.3s ease;
   padding: 8px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+  background: linear-gradient(135deg, var(--light-green), var(--secondary-green));
   box-shadow: 0 5px 15px var(--shadow);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
 }
 
 .social-links a:hover {
@@ -386,6 +399,7 @@ body {
   filter: brightness(0) invert(1);
   vertical-align: middle;
 }
+
 
 /* ===== HISTORIA SECTION ===== */
 .historia-content {
@@ -581,11 +595,11 @@ body {
   }
 
   .tab-button {
-    padding: 12px 12px;
+    padding: 20px 20px;
     font-size: 0.75rem;
     min-width: auto;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
 
   }
 
