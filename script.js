@@ -54,15 +54,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🎯 CONFIGURACIÓN DE NOMBRES: Define los patrones de nombres de tus imágenes
   const imagePatterns = {
+    madrinas: {
+      pattern: 'img/madrinas/{index}.jpg',
+      // customNames: ['madrina_1.jpg', 'madrina_2.png', 'bridesmaid.webp']
+    },
     novias: {
       // Patrón: nombre base + número + extensión
       pattern: 'img/novias/{index}.jpg',
       // Si tus imágenes tienen nombres diferentes, usa un array:
       // customNames: ['novia1.jpg', 'vestido-blanco.png', 'bride-photo.webp']
-    },
-    madrinas: {
-      pattern: 'img/madrinas/{index}.jpg',
-      // customNames: ['madrina_1.jpg', 'madrina_2.png', 'bridesmaid.webp']
     },
     invitadas: {
       pattern: 'img/invitadas/{index}.jpg',
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función interna para manejar la transición lateral
     const startLateralTransition = () => {
       // Determinar dirección de la animación
-      const categoryOrder = ['novias', 'madrinas', 'invitadas'];
+      const categoryOrder = ['madrinas','novias','invitadas'];
       const currentCategoryIndex = categoryOrder.indexOf(currentCategory);
       const newCategoryIndex = categoryOrder.indexOf(newCategory);
       const moveRight = newCategoryIndex > currentCategoryIndex;
