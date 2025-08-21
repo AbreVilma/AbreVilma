@@ -565,9 +565,8 @@ body {
 
 .pruebas-section h3::after {
     content: '✂';
-    position: absolute;
-    right: -40px;
-    top: 0;
+    position: static;
+    margin-left: 10px;
     font-size: 1.5rem;
     color: var(--accent-gold);
 }
