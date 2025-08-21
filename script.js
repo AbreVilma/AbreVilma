@@ -47,8 +47,8 @@ window.addEventListener('scroll', () => {
 document.addEventListener("DOMContentLoaded", () => {
   // 🚀 CONFIGURACIÓN RÁPIDA: Solo cambia estos números cuando agregues/quites imágenes
   const categories = {
-    novias: 23, // Cambia este número cuando agregues/quites imágenes
-    madrinas: 18, // Cambia este número cuando agregues/quites imágenes
+    novias: 22, // Cambia este número cuando agregues/quites imágenes
+    madrinas: 15, // Cambia este número cuando agregues/quites imágenes
     invitadas: 17 // Cambia este número cuando agregues/quites imágenes
   };
 

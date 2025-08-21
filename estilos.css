@@ -819,6 +819,13 @@ body {
     position: static;
     margin-left: 10px;
   }
+
+  .map-container{
+    margin: auto;
+    width: 80%;
+    height: 100%;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -879,6 +886,12 @@ body {
   .carousel-arrow svg {
     width: 12px;
     height: 12px;
+  }
+  
+  .map-container{
+    margin: auto;
+    width: 90%;
+    height: 100%;
   }
 
 }
