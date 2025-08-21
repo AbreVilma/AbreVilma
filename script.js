@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const categories = {
     novias: 23, // Cambia este número cuando agregues/quites imágenes
     madrinas: 18, // Cambia este número cuando agregues/quites imágenes
-    invitadas: 18 // Cambia este número cuando agregues/quites imágenes
+    invitadas: 17 // Cambia este número cuando agregues/quites imágenes
   };
 
   // 🎯 CONFIGURACIÓN DE NOMBRES: Define los patrones de nombres de tus imágenes
