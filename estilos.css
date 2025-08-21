@@ -672,7 +672,7 @@ body {
 .contact-section {
   background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
   color: white;
-  margin-top: 80px;
+  margin-top: 45px;
 }
 
 .contact-section h2 {
@@ -743,107 +743,6 @@ body {
 
 .map-container:hover iframe {
   filter: grayscale(0%);
-}
-
-/* ===== BOTÓN DE RESEÑAS COMPLETO ===== */
-
-/* Contenedor del botón de reseñas */
-.review-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  padding: 40px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  margin: 50px auto 0;
-}
-
-.review-container::before {
-  content: '⭐';
-  position: absolute;
-  top: 15px;
-  left: 25px;
-  font-size: 1.5rem;
-  opacity: 0.7;
-}
-
-.review-container::after {
-  content: '⭐⭐⭐⭐⭐';
-  position: absolute;
-  bottom: 15px;
-  right: 25px;
-  font-size: 0.8rem;
-  opacity: 0.5;
-}
-
-/* Estilos del botón */
-.btn-review {
-  display: inline-block;
-  padding: 15px 30px;
-  background: linear-gradient(135deg, var(--gold), #b8941f);
-  color: white;
-  font-weight: 600;
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  text-decoration: none;
-  border-radius: 50px;
-  border: 2px solid transparent;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-  text-align: center;
-  z-index: 1;
-}
-
-.btn-review::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
-  transition: left 0.5s ease;
-  z-index: -1;
-}
-
-.btn-review:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
-  border-color: rgba(255,255,255,0.3);
-  background: linear-gradient(135deg, #e6c547, var(--gold));
-}
-
-.btn-review:hover::before {
-  left: 0;
-}
-
-.btn-review:active {
-  transform: translateY(-1px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
-}
-
-/* Animación de pulso sutil */
-.btn-review {
-  animation: subtlePulse 4s ease-in-out infinite;
-}
-
-@keyframes subtlePulse {
-  0%, 100% {
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-  }
-  50% {
-    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.6);
-  }
 }
 
 
